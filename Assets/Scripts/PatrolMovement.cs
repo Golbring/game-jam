@@ -13,7 +13,6 @@ public class PatrolMovement : MonoBehaviour
 
     public float speed;
     private float walkingSpeed = 2;
-    private float dodgeSpeed = 4;
     private float dodgeTimer = 0;
     private float idleTimer = 0;
 
@@ -91,8 +90,9 @@ public class PatrolMovement : MonoBehaviour
 
     private IEnumerator DodgeRoll()
     {
+        speed = 0;
         animator.SetTrigger("dodgeTrigger");
-        rb.AddRelativeForceX(dodgeSpeed);
+        speed = walkingSpeed;
         dodgeTimer = 0;
         yield return null;
     }
