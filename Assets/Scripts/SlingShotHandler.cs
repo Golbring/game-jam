@@ -66,12 +66,14 @@ public class SlingShotHandler : MonoBehaviour
             _birdOnSlinghot = false;
 
             SetLines(_centerPosition.position);
-
-            StartCoroutine(SpawnACatAfterTime());
         }
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             _spawnedCat.IncreaseGravityScale(_totalGravity);
+        }
+        if (_spawnedCat._isDead)
+        {
+            StartCoroutine(SpawnACatAfterTime());
         }
  
 
@@ -129,7 +131,9 @@ public class SlingShotHandler : MonoBehaviour
 
     private IEnumerator SpawnACatAfterTime()
     {
+        _spawnedCat._isDead = false;
         yield return new WaitForSeconds(_respawnTimer);
+        Destroy(_spawnedCat.gameObject);
         SpawnACat();
     }
 

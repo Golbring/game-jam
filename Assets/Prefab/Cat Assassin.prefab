@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7887096287149026481}
   - component: {fileID: 2372099338609601044}
   - component: {fileID: 1746506828644029799}
+  - component: {fileID: 3469389449485114646}
   m_Layer: 0
   m_Name: Cat Assassin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2372099338609601044
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +166,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc24c07c6a89bf4fbad271b03af86fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 0}
+  _isDead: 0
+--- !u!95 &3469389449485114646
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199529832726536703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c2a1b786bd73d245b05b315ef26f562, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

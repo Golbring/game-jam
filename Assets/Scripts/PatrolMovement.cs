@@ -15,6 +15,7 @@ public class PatrolMovement : MonoBehaviour
     private float walkingSpeed = 2;
     private float dodgeTimer = 0;
     private float idleTimer = 0;
+    private bool isDead;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class PatrolMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         currentPoint = pointB.transform;
         animator.SetBool("isRunning", true);
+        isDead = false;
     }
 
     void Update()
@@ -30,21 +32,23 @@ public class PatrolMovement : MonoBehaviour
         dodgeTimer += Time.deltaTime;
         idleTimer += Time.deltaTime;
 
-        Debug.Log(dodgeTimer);
-        
-        MoveDirection();
-        SetDirectionPoint();
-
-        if (dodgeTimer > 5)
+        if (isDead == false)
         {
-            StartCoroutine(DodgeRoll());
-        }
+            MoveDirection();
+            SetDirectionPoint();
 
-        if (idleTimer > 11)
-        {
-            animator.SetBool("isIdle", true);
-            StartCoroutine(IdleAnimation());
+            if (dodgeTimer > 5)
+            {
+                StartCoroutine(DodgeRoll());
+            }
+
+            if (idleTimer > 11)
+            {
+                animator.SetBool("isIdle", true);
+                StartCoroutine(IdleAnimation());
+            }
         }
+        else { return; }
     }
 
     private void SetDirectionPoint()
@@ -92,6 +96,7 @@ public class PatrolMovement : MonoBehaviour
     {
         speed = 0;
         animator.SetTrigger("dodgeTrigger");
+        yield return new WaitForSeconds(1);
         speed = walkingSpeed;
         dodgeTimer = 0;
         yield return null;
@@ -106,5 +111,15 @@ public class PatrolMovement : MonoBehaviour
         idleTimer = 0;
         dodgeTimer = 0;
         yield return null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            animator.SetTrigger("deathTrigger");
+            isDead = true;
+            speed = 0;
+        }
     }
 }

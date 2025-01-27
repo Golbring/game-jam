@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: ea4fc4ffff0c37743a9908a566093767
+guid: 3f3ff6e3db147414686aaae16ee5f8c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2649847697073447219
-    second: Dead_0
+      213: 7973549399023850247
+    second: Meow-Knight_Dodge_0
   - first:
-      213: -8293461521501190705
-    second: Dead_1
+      213: -2910542726661821921
+    second: Meow-Knight_Dodge_1
   - first:
-      213: -1631342717326862633
-    second: Dead_2
+      213: 3325227880791611692
+    second: Meow-Knight_Dodge_2
   - first:
-      213: -3927913518680497933
-    second: Dead_3
+      213: -8128860970746564367
+    second: Meow-Knight_Dodge_3
   - first:
-      213: -1057675302478342458
-    second: Dead_4
+      213: -8209835762135974264
+    second: Meow-Knight_Dodge_4
   - first:
-      213: -7954960911384535938
-    second: Dead_5
+      213: 235476536634138341
+    second: Meow-Knight_Dodge_5
+  - first:
+      213: 3287668590361893003
+    second: Meow-Knight_Dodge_6
+  - first:
+      213: 6407521049876832914
+    second: Meow-Knight_Dodge_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,133 +121,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead_0
+      name: Meow-Knight_Dodge_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 43
-        height: 58
+        x: 0
+        y: 181
+        width: 15
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33123f4e07626c420800000000000000
-      internalID: 2649847697073447219
+      spriteID: 70398d7ceecb7ae60800000000000000
+      internalID: 7973549399023850247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_1
+      name: Meow-Knight_Dodge_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 0
-        width: 47
-        height: 45
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+        x: 0
+        y: 155
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc50d84dfa4b7ec80800000000000000
-      internalID: -8293461521501190705
+      spriteID: f1aa9b19fccab97d0800000000000000
+      internalID: -2910542726661821921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_2
+      name: Meow-Knight_Dodge_2
       rect:
         serializedVersion: 2
-        x: 276
-        y: 0
-        width: 45
-        height: 34
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 0
+        y: 129
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d6dfca117e4c59e0800000000000000
-      internalID: -1631342717326862633
+      spriteID: c291fc7c325952e20800000000000000
+      internalID: 3325227880791611692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_3
+      name: Meow-Knight_Dodge_3
       rect:
         serializedVersion: 2
-        x: 404
-        y: 0
-        width: 50
-        height: 33
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 13
+        y: 103
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f0289a377f3d79c0800000000000000
-      internalID: -3927913518680497933
+      spriteID: 1f03d12040c703f80800000000000000
+      internalID: -8128860970746564367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_4
+      name: Meow-Knight_Dodge_4
       rect:
         serializedVersion: 2
-        x: 532
-        y: 0
-        width: 54
-        height: 33
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 1
+        y: 77
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c6131c8ae16251f0800000000000000
-      internalID: -1057675302478342458
+      spriteID: 88e36953fddc01e80800000000000000
+      internalID: -8209835762135974264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_5
+      name: Meow-Knight_Dodge_5
       rect:
         serializedVersion: 2
-        x: 673
-        y: 0
-        width: 54
-        height: 33
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 0
+        y: 51
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7c9ec2c23d4a9190800000000000000
-      internalID: -7954960911384535938
+      spriteID: 5ee540799a4944300800000000000000
+      internalID: 235476536634138341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meow-Knight_Dodge_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b88dab30a2520ad20800000000000000
+      internalID: 3287668590361893003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meow-Knight_Dodge_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2922fb442761ce850800000000000000
+      internalID: 6407521049876832914
       vertices: []
       indices: 
       edges: []
@@ -250,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 44d68c43a81715d43a44d67a9987ed35
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dead_0: 2649847697073447219
-      Dead_1: -8293461521501190705
-      Dead_2: -1631342717326862633
-      Dead_3: -3927913518680497933
-      Dead_4: -1057675302478342458
-      Dead_5: -7954960911384535938
+      Meow-Knight_Dodge_0: 7973549399023850247
+      Meow-Knight_Dodge_1: -2910542726661821921
+      Meow-Knight_Dodge_2: 3325227880791611692
+      Meow-Knight_Dodge_3: -8128860970746564367
+      Meow-Knight_Dodge_4: -8209835762135974264
+      Meow-Knight_Dodge_5: 235476536634138341
+      Meow-Knight_Dodge_6: 3287668590361893003
+      Meow-Knight_Dodge_7: 6407521049876832914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
