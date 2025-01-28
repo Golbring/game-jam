@@ -26,12 +26,12 @@ public class SlingShotHandler : MonoBehaviour
     [Header("Killer Cat")]
     [SerializeField] private FlyingCat _catAssassinPrefab;
     [SerializeField] private float _CatPositionOffset = 2f;
-    [SerializeField] private float _totalGravity = 20f;
 
 
     private FlyingCat _spawnedCat;
     private bool _clickedWithinArea;
     private bool _birdOnSlinghot;
+    public bool _drawSling;
     private Vector2 _slingShotLinesPosition;
     private Vector2 _direction;
     private Vector2 _directionNormalized;
@@ -67,10 +67,6 @@ public class SlingShotHandler : MonoBehaviour
 
             SetLines(_centerPosition.position);
         }
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            _spawnedCat.IncreaseGravityScale(_totalGravity);
-        }
         if (_spawnedCat._isDead)
         {
             StartCoroutine(SpawnACatAfterTime());
@@ -83,7 +79,8 @@ public class SlingShotHandler : MonoBehaviour
     #region SlingShot Methods
     private void DrawSlingShot()
     {
-        
+        _drawSling = true;
+
         Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         _slingShotLinesPosition = _centerPosition.position + Vector3.ClampMagnitude(touchPosition - _centerPosition.position, _maxDistance);
@@ -131,6 +128,7 @@ public class SlingShotHandler : MonoBehaviour
 
     private IEnumerator SpawnACatAfterTime()
     {
+        _drawSling = false;
         _spawnedCat._isDead = false;
         yield return new WaitForSeconds(_respawnTimer);
         Destroy(_spawnedCat.gameObject);

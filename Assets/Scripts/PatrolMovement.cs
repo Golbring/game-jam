@@ -16,7 +16,8 @@ public class PatrolMovement : MonoBehaviour
     private float dodgeTimer = 0;
     private float idleTimer = 0;
     private bool isDead;
-
+    private bool noDie;
+    private bool isIdling;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,12 +38,12 @@ public class PatrolMovement : MonoBehaviour
             MoveDirection();
             SetDirectionPoint();
 
-            if (dodgeTimer > 5)
+            if (dodgeTimer > 5 && !noDie)
             {
                 StartCoroutine(DodgeRoll());
             }
 
-            if (idleTimer > 11)
+            if (idleTimer > 11 && !isIdling)
             {
                 animator.SetBool("isIdle", true);
                 StartCoroutine(IdleAnimation());
@@ -94,28 +95,31 @@ public class PatrolMovement : MonoBehaviour
 
     private IEnumerator DodgeRoll()
     {
+        noDie = true;
         speed = 0;
-        animator.SetTrigger("dodgeTrigger");
-        yield return new WaitForSeconds(1);
+        animator.SetBool("isDodging", true);
+        yield return new WaitForSeconds(2);
+        animator.SetBool("isDodging", false);
         speed = walkingSpeed;
         dodgeTimer = 0;
-        yield return null;
+        noDie = false;
     }
 
     private IEnumerator IdleAnimation()
     {
+        isIdling = true;
         speed = 0;
         yield return new WaitForSeconds(3);
         speed = walkingSpeed;
         animator.SetBool("isIdle", false);
         idleTimer = 0;
         dodgeTimer = 0;
-        yield return null;
+        isIdling = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !noDie)
         {
             animator.SetTrigger("deathTrigger");
             isDead = true;
