@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2501511413011329797}
   - component: {fileID: 9114828948984408917}
   m_Layer: 0
-  m_Name: Anim
-  m_TagString: Untagged
+  m_Name: EnemyModel
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,6 +174,7 @@ MonoBehaviour:
   pointA: {fileID: 7475447096169050222}
   pointB: {fileID: 3098538591529144224}
   speed: 2
+  noDie: 0
 --- !u!50 &9114828948984408917
 Rigidbody2D:
   serializedVersion: 5
@@ -186,7 +187,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 1
@@ -200,7 +201,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 6
 --- !u!1 &3098538591529144224
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +244,7 @@ GameObject:
   - component: {fileID: 2279643852248288345}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
