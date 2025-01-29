@@ -225,7 +225,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5022696765003569893, guid: 31be725a3bba33f4a9539096ef608b04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   _slingShotArea: {fileID: 5871107549276302725}
   _catAssassinPrefab: {fileID: 1746506828644029799, guid: 4a74ed95c9a6d254daeebb98412ecd00, type: 3}
   _CatPositionOffset: 0.25
-  _totalGravity: 20
+  _drawSling: 0
 --- !u!1 &3508433369892972243
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +468,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 12
   m_Sprite: {fileID: -7985416853845802500, guid: 7f51b7d9e3ab46f47ba2437d0fdbacb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

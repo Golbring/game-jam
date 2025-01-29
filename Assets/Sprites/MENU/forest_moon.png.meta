@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      forest_moon_0: 3857303766445369216
+      forest_moon_1: -8510220819884220495
+      forest_moon_2: 8653981071668642777
+      forest_moon_3: -3507670334343589476
+      forest_moon_4: -2150814335114023658
+      forest_moon_5: 3414097878349534850
+      forest_moon_6: 8315925664715817250
+      forest_moon_7: 4866918639536238565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
