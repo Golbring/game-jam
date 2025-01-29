@@ -7,4 +7,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+   public void QuitGame()
+    {
+        Application.Quit();
+    }
+   public void SetFullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+    }
 }
