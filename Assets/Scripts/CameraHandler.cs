@@ -14,6 +14,7 @@ public class CameraHandler : MonoBehaviour
     public CinemachineCamera panningCam;
 
     public Vector3 pannSpeed;
+    public Vector3 mapClampDistance;
     private float idleTimer;
 
     private void Start()
