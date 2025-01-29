@@ -5,23 +5,28 @@ using UnityEngine;
 public class PatrolMovement : MonoBehaviour
 {
 
+    private FlyingCat catCode;
+    private GameObject catClone;
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
     private Animator animator;
     private Transform currentPoint;
+    private BoxCollider2D boxCollider; 
 
     public float speed;
     private float walkingSpeed = 2;
     private float dodgeTimer = 0;
     private float idleTimer = 0;
+    private float gravity = 0;
     private bool isDead;
-    private bool noDie;
+    public bool noDie;
     private bool isIdling;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
         currentPoint = pointB.transform;
         animator.SetBool("isRunning", true);
         isDead = false;
@@ -32,6 +37,7 @@ public class PatrolMovement : MonoBehaviour
         Vector2 point = currentPoint.position - transform.position;
         dodgeTimer += Time.deltaTime;
         idleTimer += Time.deltaTime;
+        FindCat();
 
         if (isDead == false)
         {
@@ -50,6 +56,12 @@ public class PatrolMovement : MonoBehaviour
             }
         }
         else { return; }
+    }
+
+    private void FindCat()
+    {
+        catClone = GameObject.Find("Cat Assassin(Clone)");
+        catCode = catClone.GetComponent<FlyingCat>();
     }
 
     private void SetDirectionPoint()
@@ -119,11 +131,13 @@ public class PatrolMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !noDie)
+        if (collision.gameObject.tag == "Player" && !noDie && !catCode.cannotKill)
         {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
             animator.SetTrigger("deathTrigger");
             isDead = true;
-            speed = 0;
+            rb.gravityScale = gravity;
+            boxCollider.enabled = false;
         }
     }
 }
