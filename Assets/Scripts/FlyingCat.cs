@@ -8,7 +8,7 @@ public class FlyingCat : MonoBehaviour
     public Rigidbody2D _rb;
     private CircleCollider2D _circleCollider;
     private Animator anim;
-    private bool _hasBeenLaunched;
+    public bool _hasBeenLaunched;
     private bool _shouldFaceVelocityDirectionl;
     public bool _isDead;
     
@@ -60,6 +60,7 @@ public class FlyingCat : MonoBehaviour
         {
             anim.SetBool("isFlying", false);
             _isDead = true;
+            _hasBeenLaunched = false;
         }
     }
 
