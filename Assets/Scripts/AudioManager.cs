@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,6 +10,11 @@ public class AudioManager : MonoBehaviour
     AudioSource musicSource;
     [SerializeField]
     AudioSource SFXSource;
+
+    [SerializeField]
+    Slider musicVolumeSlider;
+    [SerializeField]
+    Slider sfxVolumeSlider;
 
     [Header("--- Audio Clip ---")]
     public AudioClip backgroundMusic;
@@ -21,8 +29,40 @@ public class AudioManager : MonoBehaviour
     private bool sfxIsPlaying;
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+       
     }
+    private void Start()
+    {
+        if (!PlayerPrefs.HasKey("musicVolume"))
+        {
+            PlayerPrefs.SetFloat("musicVolume", 0.5f);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
+        if (!PlayerPrefs.HasKey("sfxVolume"))
+        {
+            PlayerPrefs.SetFloat("sfxVolume", 0.5f);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
+    }
+    public void ChangeMusicVolume()
+    {
+        musicSource.volume = musicVolumeSlider.value;
+        Save();
+    }
+    public void ChangeSfxVolume()
+    {
+        SFXSource.volume = sfxVolumeSlider.value;
+        Save();
+    }
+
     public void playMusic(AudioClip clip)
     {
         musicSource.clip = clip;
@@ -30,6 +70,18 @@ public class AudioManager : MonoBehaviour
         {
             musicSource.Play();
         }
+    }
+
+    private void Load()
+    {
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetFloat("musicVolume", musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("sfxVolume", sfxVolumeSlider.value);
     }
 
     // Update is called once per frame
