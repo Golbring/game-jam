@@ -19,10 +19,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip clickButton;
 
     private bool sfxIsPlaying;
-    void Start()
+    private void Awake()
     {
-        musicSource.clip = backgroundMusic;
-        musicSource.Play();
+        DontDestroyOnLoad(transform.gameObject);
+    }
+    public void playMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        if (!musicSource.isPlaying)
+        {
+            musicSource.Play();
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +38,7 @@ public class AudioManager : MonoBehaviour
         SFXSource.PlayOneShot(clip);
     }
 
-    public void stopPlaySFX(AudioClip clip)
+    public void stopPlaySFX()
     {
         SFXSource.Stop();
     }

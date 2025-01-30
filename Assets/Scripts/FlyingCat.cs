@@ -14,6 +14,7 @@ public class FlyingCat : MonoBehaviour
     public Rigidbody2D _rb;
     private CircleCollider2D _circleCollider;
     private Animator anim;
+    private AudioManager audioManager;
     
     public bool _hasBeenLaunched;
     private bool _shouldFaceVelocityDirectionl;
@@ -45,6 +46,7 @@ public class FlyingCat : MonoBehaviour
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         mainCam = GameObject.Find("Main Camera");
         scene = mainCam.GetComponent<SceneHandler>();
         _rb = GetComponent<Rigidbody2D>();
@@ -70,7 +72,9 @@ public class FlyingCat : MonoBehaviour
         _hasBeenLaunched = true;
         _shouldFaceVelocityDirectionl = true;
         anim.SetBool("isIdle", false);
-
+        audioManager.stopPlaySFX();
+        audioManager.playSFX(audioManager.slingRelease);
+        audioManager.playSFX(audioManager.flying);
     }
 
     public void IncreaseGravityScale(float newGravityScale)
@@ -96,16 +100,22 @@ public class FlyingCat : MonoBehaviour
 
         if (collision.gameObject.tag == "Environment" && !hasSucceeded)
         {
+            audioManager.stopPlaySFX();
+            audioManager.playSFX(audioManager.landing);
             KillCat();
         }
 
         else if (collision.gameObject.tag == "Target" && !aiMove.noDie && !cannotKill)
         {
+            audioManager.stopPlaySFX();
+            audioManager.playSFX(audioManager.hitEnemy);
             SuccessSequence();
         }
 
         else if (collision.gameObject.tag == "Boss" && !_isDead)
         {
+            audioManager.stopPlaySFX();
+            audioManager.playSFX(audioManager.hitEnemy);
             SuccessSequence();
         }
 

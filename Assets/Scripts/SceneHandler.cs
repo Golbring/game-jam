@@ -5,6 +5,7 @@ public class SceneHandler : MonoBehaviour
 {
     [SerializeField]
     RectTransform fader;
+    AudioManager audioManager;
 
     private int currentSceneIdx;
     public float fadeSpeed;
@@ -12,9 +13,8 @@ public class SceneHandler : MonoBehaviour
     private void Start()
     {
         currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         fader.gameObject.SetActive(true);
-
         LeanTween.alpha(fader, 1, 0);
         LeanTween.alpha(fader, 0, fadeSpeed).setOnComplete(() =>
             {
@@ -31,7 +31,7 @@ public class SceneHandler : MonoBehaviour
     public void LoadMenu()
     {
         fader.gameObject.SetActive(true);
-
+        audioManager.playMusic(audioManager.menuMusic);
         LeanTween.alpha(fader, 0, 0);
         LeanTween.alpha(fader, 1, fadeSpeed).setOnComplete(() =>
        {
@@ -51,6 +51,7 @@ public class SceneHandler : MonoBehaviour
         LeanTween.alpha(fader, 0, 0);
         LeanTween.alpha(fader, 1, fadeSpeed).setOnComplete(() =>
         {
+            audioManager.playMusic(audioManager.backgroundMusic);
             Invoke("LoadLevel", 0.5f);
         });
 
