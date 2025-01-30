@@ -35,11 +35,13 @@ public class SlingShotHandler : MonoBehaviour
     private Vector2 _slingShotLinesPosition;
     private Vector2 _direction;
     private Vector2 _directionNormalized;
+    private AudioManager audioManager;
 
 
     #region Awake
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         _leftLineRenderer.enabled = false;
         _rightLineRenderer.enabled = false;
         SpawnACat();
@@ -80,6 +82,12 @@ public class SlingShotHandler : MonoBehaviour
     private void DrawSlingShot()
     {
         _drawSling = true;
+
+        if(!audioManager.isSFXPlaying())
+        {
+            audioManager.playSFX(audioManager.slingDraw);
+        }
+        
 
         Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 

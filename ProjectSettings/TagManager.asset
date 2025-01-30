@@ -7,6 +7,7 @@ TagManager:
   - Environment
   - Target
   - No Death Collider
+  - Audio
   layers:
   - Default
   - TransparentFX
