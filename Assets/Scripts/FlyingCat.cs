@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 public class FlyingCat : MonoBehaviour
 {
     private PatrolMovement aiMove;
+    private SceneHandler scene;
     private GameObject knight;
     public Rigidbody2D _rb;
     private CircleCollider2D _circleCollider;
@@ -83,7 +84,7 @@ public class FlyingCat : MonoBehaviour
             _hasBeenLaunched = false;
             hasSucceeded = true;
             //play victory animation
-            //have an automatic transition or a button for "Next Level"
+            scene.LoadNextScene();
         }
 
         else if (collision.gameObject.tag == "Environment" && !hasSucceeded)
