@@ -88,8 +88,7 @@ public class FlyingCat : MonoBehaviour
         anim.SetBool("isIdle", true);
         _hasBeenLaunched = false;
         hasSucceeded = true;
-        //play victory animation
-        scene.LoadNextScene();
+        scene.nextLevel.gameObject.SetActive(true);
     }
 
 
