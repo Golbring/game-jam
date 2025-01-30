@@ -5,6 +5,7 @@ public class SceneHandler : MonoBehaviour
 {
     [SerializeField]
     RectTransform fader;
+    public RectTransform nextLevel;
     AudioManager audioManager;
 
     private int currentSceneIdx;
