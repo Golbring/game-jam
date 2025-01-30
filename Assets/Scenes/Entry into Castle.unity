@@ -2680,6 +2680,7 @@ GameObject:
   - component: {fileID: 737196437}
   - component: {fileID: 737196440}
   - component: {fileID: 737196441}
+  - component: {fileID: 737196442}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2837,6 +2838,20 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &737196442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737196436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205454d23782b1c4cae5d816d019415f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fader: {fileID: 1762099579}
+  fadeSpeed: 0.5
 --- !u!1 &778605937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,6 +5363,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1762099579 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7404700667879551377, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
+  m_PrefabInstance: {fileID: 793022537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901634706
 GameObject:
   m_ObjectHideFlags: 0
