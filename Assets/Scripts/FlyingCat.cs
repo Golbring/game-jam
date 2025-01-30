@@ -9,6 +9,7 @@ public class FlyingCat : MonoBehaviour
 {
     private PatrolMovement aiMove;
     private SceneHandler scene;
+    private GameObject mainCam;
     private GameObject knight;
     public Rigidbody2D _rb;
     private CircleCollider2D _circleCollider;
@@ -29,6 +30,10 @@ public class FlyingCat : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        Debug.Log(cannotKill);
+    }
     private void KillCat()
     {
         transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -40,6 +45,8 @@ public class FlyingCat : MonoBehaviour
 
     private void Awake()
     {
+        mainCam = GameObject.Find("Main Camera");
+        scene = mainCam.GetComponent<SceneHandler>();
         _rb = GetComponent<Rigidbody2D>();
         _circleCollider = GetComponent<CircleCollider2D>();
         anim = GetComponent<Animator>();
@@ -87,7 +94,12 @@ public class FlyingCat : MonoBehaviour
     {
         _shouldFaceVelocityDirectionl = false;
 
-        if (collision.gameObject.tag == "Target" && !aiMove.noDie && !_isDead)
+        if (collision.gameObject.tag == "Environment" && !hasSucceeded)
+        {
+            KillCat();
+        }
+
+        else if (collision.gameObject.tag == "Target" && !aiMove.noDie && !cannotKill)
         {
             SuccessSequence();
         }
@@ -97,10 +109,7 @@ public class FlyingCat : MonoBehaviour
             SuccessSequence();
         }
 
-        else if (collision.gameObject.tag == "Environment" && !hasSucceeded)
-        {
-            KillCat();
-        }
+        
     }
 
 }
