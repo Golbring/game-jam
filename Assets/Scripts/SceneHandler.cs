@@ -75,11 +75,6 @@ public class SceneHandler : MonoBehaviour
         }
         else { return ; }
     }
-
-    public void SetFullScreen(bool isFullScreen)
-    {
-        Screen.fullScreen = isFullScreen;
-    }
 }
 
 
