@@ -71,6 +71,16 @@ public class FlyingCat : MonoBehaviour
         _rb.gravityScale = newGravityScale;
     }
 
+    private void SuccessSequence()
+    {
+        transform.rotation = new Quaternion(0, 0, 0, 0);
+        anim.SetBool("isIdle", true);
+        _hasBeenLaunched = false;
+        hasSucceeded = true;
+        //play victory animation
+        scene.LoadNextScene();
+    }
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -79,12 +89,12 @@ public class FlyingCat : MonoBehaviour
 
         if (collision.gameObject.tag == "Target" && !aiMove.noDie && !_isDead)
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            anim.SetBool("isIdle", true);
-            _hasBeenLaunched = false;
-            hasSucceeded = true;
-            //play victory animation
-            scene.LoadNextScene();
+            SuccessSequence();
+        }
+
+        else if (collision.gameObject.tag == "Boss" && !_isDead)
+        {
+            SuccessSequence();
         }
 
         else if (collision.gameObject.tag == "Environment" && !hasSucceeded)
