@@ -73,7 +73,7 @@ public class SceneHandler : MonoBehaviour
         {
             SceneManager.LoadScene(currentSceneIdx + 1);
         }
-        else { return ; }
+        else { LoadMenu(); }
     }
 }
 
