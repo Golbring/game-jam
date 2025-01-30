@@ -8,6 +8,7 @@ TagManager:
   - Target
   - No Death Collider
   - Boss
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Water
   - UI
   - SlingShotArea
-  - 
+  - Volume Sliders
   - 
   - 
   - 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3416007950407627958}
   - component: {fileID: 8487271132329191074}
+  - component: {fileID: 8393309502782475569}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Audio
@@ -48,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 3059292455893105750}
   SFXSource: {fileID: 7469989611838585535}
+  musicVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
   backgroundMusic: {fileID: 8300000, guid: 20c30e3177b25114ca8eb478ec666f55, type: 3}
   menuMusic: {fileID: 8300000, guid: 759944fc105c41b4aadd042f8f439b0d, type: 3}
   slingDraw: {fileID: 8300000, guid: f8bb7c5a4e3e97041a610f458f0d6043, type: 3}
@@ -56,6 +59,19 @@ MonoBehaviour:
   landing: {fileID: 8300000, guid: 70278e8d03e5d0c4eb41c30e7a6736d9, type: 3}
   hitEnemy: {fileID: 8300000, guid: 6881e714cfbf80d4b85cf347e39a0f23, type: 3}
   clickButton: {fileID: 8300000, guid: 5020148256585654195b01a9f176ab1d, type: 3}
+--- !u!114 &8393309502782475569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966378053500899092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030f6eb316309d14a9f63c0f9d41a488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 
 --- !u!1 &5739675690684153573
 GameObject:
   m_ObjectHideFlags: 0
