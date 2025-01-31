@@ -76,19 +76,6 @@ public class SceneHandler : MonoBehaviour
     {
             SceneManager.LoadScene(currentSceneIdx + 1);
     }
-
-    void DebugSkip()
-    {
-        LoadLevel();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            DebugSkip();
-        }
-    }
 }
 
 
