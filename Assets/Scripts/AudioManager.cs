@@ -38,6 +38,7 @@ public class AudioManager : MonoBehaviour
 
             PlayerPrefs.SetFloat("sfxVolume", 0.5f);
 
+        Load();
     }
     public void ChangeMusicVolume()
     {

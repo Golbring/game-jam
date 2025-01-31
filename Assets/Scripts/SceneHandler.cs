@@ -12,7 +12,7 @@ public class SceneHandler : MonoBehaviour
     public float fadeSpeed;
 
     private void Start()
-    {
+    {   
         currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         fader.gameObject.SetActive(true);
@@ -21,6 +21,11 @@ public class SceneHandler : MonoBehaviour
             {
                 fader.gameObject.SetActive(false);
             });
+
+        if (currentSceneIdx == 0)
+        {
+            audioManager.playMusic(audioManager.menuMusic);
+        }
 
         //LeanTween.scale(fader, new Vector3(1, 1, 1), 0);
         //LeanTween.scale(fader, Vector3.zero, fadeSpeed).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
