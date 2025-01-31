@@ -5426,6 +5426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fader: {fileID: 3636105376752248390}
   nextLevel: {fileID: 85330923}
+  currentSceneIdx: 0
   fadeSpeed: 0.5
 --- !u!1 &262585462
 GameObject:

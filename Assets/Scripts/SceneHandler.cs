@@ -8,7 +8,7 @@ public class SceneHandler : MonoBehaviour
     public RectTransform nextLevel;
     AudioManager audioManager;
 
-    private int currentSceneIdx;
+    public int currentSceneIdx;
     public float fadeSpeed;
 
     private void Start()
@@ -69,11 +69,20 @@ public class SceneHandler : MonoBehaviour
 
     void LoadLevel()
     {
-        if (currentSceneIdx <= 5)
-        {
             SceneManager.LoadScene(currentSceneIdx + 1);
+    }
+
+    void DebugSkip()
+    {
+        LoadLevel();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            DebugSkip();
         }
-        else { return ; }
     }
 }
 
