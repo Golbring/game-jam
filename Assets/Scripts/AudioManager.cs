@@ -33,34 +33,21 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("musicVolume"))
-        {
+
             PlayerPrefs.SetFloat("musicVolume", 0.5f);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
-        if (!PlayerPrefs.HasKey("sfxVolume"))
-        {
+
             PlayerPrefs.SetFloat("sfxVolume", 0.5f);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
+
     }
     public void ChangeMusicVolume()
     {
         musicSource.volume = musicVolumeSlider.value;
-        Save();
+        //Save();
     }
     public void ChangeSfxVolume()
     {
         SFXSource.volume = sfxVolumeSlider.value;
-        Save();
+        //Save();
     }
 
     public void playMusic(AudioClip clip)
