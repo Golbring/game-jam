@@ -34,10 +34,15 @@ public class CameraHandler : MonoBehaviour
             MovePanCam();
         }
         
-        if (Input.GetKeyDown(KeyCode.R) || slingCode._drawSling)
+        if (Input.GetKeyDown(KeyCode.Space) || slingCode._drawSling)
         {
             panningCam.Priority = 0;
             panningCam.transform.position = followCam.transform.position;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            catCode.KillCat();
         }
     }
 

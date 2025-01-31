@@ -8,9 +8,11 @@ using UnityEngine.Rendering;
 public class FlyingCat : MonoBehaviour
 {
     private PatrolMovement aiMove;
+    private ScoreTracking tracker;
     private SceneHandler scene;
     private GameObject mainCam;
     private GameObject knight;
+    private GameObject scoreTracker;
     public Rigidbody2D _rb;
     private CircleCollider2D _circleCollider;
     private Animator anim;
@@ -35,13 +37,14 @@ public class FlyingCat : MonoBehaviour
     {
         Debug.Log(cannotKill);
     }
-    private void KillCat()
+    public void KillCat()
     {
         transform.rotation = new Quaternion(0, 0, 0, 0);
         anim.SetBool("isFlying", false);
         _isDead = true;
         cannotKill = true;
         _hasBeenLaunched = false;
+        tracker.deathNumber++;
     }
 
     private void Awake()
@@ -49,6 +52,8 @@ public class FlyingCat : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         mainCam = GameObject.Find("Main Camera");
         scene = mainCam.GetComponent<SceneHandler>();
+        scoreTracker = GameObject.Find("Score");
+        tracker = scoreTracker.GetComponent<ScoreTracking>();
         _rb = GetComponent<Rigidbody2D>();
         _circleCollider = GetComponent<CircleCollider2D>();
         anim = GetComponent<Animator>();
@@ -111,7 +116,14 @@ public class FlyingCat : MonoBehaviour
             SuccessSequence();
         }
 
-        else if (collision.gameObject.tag == "Boss" && !_isDead)
+        else if (collision.gameObject.tag == "Target" && aiMove.noDie)
+        {
+            audioManager.stopPlaySFX();
+            audioManager.playSFX(audioManager.landing);
+            KillCat();
+        }
+
+        else if (collision.gameObject.tag == "Boss" && !cannotKill)
         {
             audioManager.stopPlaySFX();
             audioManager.playSFX(audioManager.hitEnemy);

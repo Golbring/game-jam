@@ -5426,6 +5426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fader: {fileID: 3636105376752248390}
   nextLevel: {fileID: 85330923}
+  currentSceneIdx: 0
   fadeSpeed: 0.5
 --- !u!1 &262585462
 GameObject:
@@ -9841,30 +9842,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 45696897827219081, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 45696897827219081, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 45696897827219081, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 45696897827219081, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 45696897827219081, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 45696897827219081, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 77910375391812137, guid: a532d9f92a71d6f43af83459ee26bb66, type: 3}
       propertyPath: m_Name
       value: Canvas
